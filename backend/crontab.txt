@@ -1,0 +1,1 @@
+0 * * * * root python3 /app/offcain/scheduled_populate.py >> /var/log/cron.log 2>&1

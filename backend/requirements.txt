@@ -1,0 +1,10 @@
+Flask
+yfinance
+psycopg2-binary
+python-dotenv
+flask-cors
+python-pkcs11
+eth_account
+cryptography
+eth-utils
+web3
