@@ -11,7 +11,8 @@ We use different technologies for the project such as Vue, C++, Flask, PostgreSQ
 
 ---
 
-You can share your thoughts on any problems with the application in the issues panel.
+You can share your thoughts on any problems with the application in the issues panel. 
+I only pay $5 a month for the server, so if more people start using it, it might be a little slow.
 
 ---
 
