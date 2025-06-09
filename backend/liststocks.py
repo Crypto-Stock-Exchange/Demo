@@ -71,11 +71,13 @@ def get_stock_details(stock_id):
     
 @liststocks_bp.route("/stocks/<int:stock_id>/<string:time>", methods=["GET"])
 def get_price_history(stock_id, time):
-
+    VALID_COLUMNS = {"pricehistory24h", "pricehistory5d", "pricehistory1m", "pricehistory6m", "pricehistory1y", "pricehistory5y", "pricehistoryall"}
+    if time not in VALID_COLUMNS:
+        return jsonify({"error": "SQL inection"}), 400
     conn = makeconn()
     cursor = conn.cursor()
 
-    # Lekérdezi a kívánt oszlopot
+    # Thanks Norbert :D
     cursor.execute(f"SELECT {time} FROM stocks WHERE id = %s", (stock_id,))
     result = cursor.fetchone()
 
