@@ -37,8 +37,6 @@ Risk: Higher stakes give a bigger share of the reward pool.
 
 Early withdrawal is possible but comes with a significant fee, which is redistributed to users with accurate predictions who stayed committed.
 
-## 📘 Want the full breakdown? Read the complete documentation here (insert real link if available)
-
 ## ✅ Legal & Licensing Information
 This project has been reviewed for legal compliance.
 To operate such a platform legally, we acquired licensing through GFSC (Comoros).
@@ -53,4 +51,4 @@ We consulted directly with the GFSC (Grand Comoros Financial Services Commission
 
 ## 🐞 Feedback & Issues
 Have feedback, questions, or encountered a bug?
-## 👉 Submit an issue here: <a>https://github.com/Crypto-Stock-Exchange/Demo/issues</a>
+## 👉 Submit an issue <a text = "here">https://github.com/Crypto-Stock-Exchange/Demo/issues</a>
