@@ -39,9 +39,7 @@ Early withdrawal is possible but comes with a significant fee, which is redistri
 
 ## ✅ Legal & Licensing Information
 This project has been reviewed for legal compliance.
-To operate such a platform legally, we acquired licensing through GFSC (Comoros).
-
-## ✅ Fully compliant with legal requirements
+To operate such a platform legally, we acquired licensing through GFSC
 
 ## 💼 Licensed for operation in Comoros
 
