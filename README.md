@@ -1,9 +1,9 @@
-#Crypto Stock Exchange
+# Crypto Stock Exchange
 Crypto Stock Exchange is a demo project that bridges the traditional stock market with the decentralized crypto ecosystem. We integrated key DeFi protocols—AAVE and Uniswap V3—to bring prediction-based stock exposure into the crypto space.
 
-🔗 Live demo (no real money required): <a>https://crypto-stock-exchange.com</a>
+## 🔗 Live demo (no real money required): <a>https://crypto-stock-exchange.com</a>
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 Vue.js – Frontend
 
 Flask – Backend API
@@ -14,10 +14,10 @@ PostgreSQL – Database
 
 We used C++ in parts of the system that required handling large amounts of data efficiently and taking advantage of parallelism.
 
-💡 Note: This is a demo project. Only test coins are used. No real financial risk is involved.
-💵 The server is currently limited to a $5/month plan, so performance may degrade slightly with high user traffic.
+## 💡 Note: This is a demo project. Only test coins are used. No real financial risk is involved.
+## 💵 The server is currently limited to a $5/month plan, so performance may degrade slightly with high user traffic.
 
-📈 How It Works
+## 📈 How It Works
 You predict a price range for a given stock.
 
 You lock your funds for a specific time period.
@@ -37,20 +37,20 @@ Risk: Higher stakes give a bigger share of the reward pool.
 
 Early withdrawal is possible but comes with a significant fee, which is redistributed to users with accurate predictions who stayed committed.
 
-📘 Want the full breakdown? Read the complete documentation here (insert real link if available)
+## 📘 Want the full breakdown? Read the complete documentation here (insert real link if available)
 
-✅ Legal & Licensing Information
+## ✅ Legal & Licensing Information
 This project has been reviewed for legal compliance.
 To operate such a platform legally, we acquired licensing through GFSC (Comoros).
 
-✅ Fully compliant with legal requirements
+## ✅ Fully compliant with legal requirements
 
-💼 Licensed for operation in Comoros
+## 💼 Licensed for operation in Comoros
 
-💰 Monthly licensing cost: ~€37,000
+## 💰 Monthly licensing cost: ~€37,000
 
 We consulted directly with the GFSC (Grand Comoros Financial Services Commission) to ensure everything is in order.
 
-🐞 Feedback & Issues
+## 🐞 Feedback & Issues
 Have feedback, questions, or encountered a bug?
-👉 Submit an issue here 
+## 👉 Submit an issue here 
