@@ -53,4 +53,4 @@ We consulted directly with the GFSC (Grand Comoros Financial Services Commission
 
 ## 🐞 Feedback & Issues
 Have feedback, questions, or encountered a bug?
-## 👉 Submit an issue here 
+## 👉 Submit an issue here: <a>https://github.com/Crypto-Stock-Exchange/Demo/issues</a>
