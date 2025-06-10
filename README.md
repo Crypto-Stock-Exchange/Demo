@@ -47,7 +47,7 @@ To operate such a platform legally, we acquired licensing through GFSC (Comoros)
 
 ## 💰 Monthly licensing cost: ~€37,000
 
-We consulted directly with the GFSC (Grand Comoros Financial Services Commission) to ensure everything is in order.
+We consulted directly with the GFSC (Global Financial Services Consultants) to ensure everything is in order.
 
 ## 🐞 Feedback & Issues
 Have feedback, questions, or encountered a bug?
