@@ -39,11 +39,11 @@ Early withdrawal is possible but comes with a significant fee, which is redistri
 
 ## ✅ Legal & Licensing Information
 This project has been reviewed for legal compliance.
-To operate such a platform legally, we acquired licensing through GFSC
+To operate such a platform legally, we gonna acquire license through GFSC
 
-## 💼 Licensed for operation in Comoros
+## 💼 Draft registration location in Comoros
 
-## 💰 Monthly licensing cost: ~€37,000
+## 💰 Yearly licensing cost: ~€37,000
 
 We consulted directly with the GFSC (Global Financial Services Consultants) to ensure everything is in order.
 
