@@ -41,16 +41,6 @@ Early withdrawal is possible but comes with a significant fee, which is redistri
 1. Those who are not into crypto but already use stock options
 2. Those who do not have easy access to stocks but have crypto
 3. Those who would rather keep their money in crypto than fiat and have a good understanding of the stock market
-   
-## ✅ Legal & Licensing Information
-This project has been reviewed for legal compliance.
-To operate such a platform legally, we gonna acquire license through GFSC
-
-## 💼 Draft registration location in Comoros
-
-## 💰 Yearly licensing cost: ~€37,000
-
-We consulted directly with the GFSC (Global Financial Services Consultants) to ensure everything is in order.
 
 ## 🐞 Feedback & Issues
 Have feedback, questions, or encountered a bug?
