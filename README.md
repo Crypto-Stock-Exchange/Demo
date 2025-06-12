@@ -37,6 +37,11 @@ Risk: Higher stakes give a bigger share of the reward pool.
 
 Early withdrawal is possible but comes with a significant fee, which is redistributed to users with accurate predictions who stayed committed.
 
+## 🧍 Target audience
+1. Those who are not into crypto but already use stock options
+2. Those who do not have easy access to stocks but have crypto
+3. Those who would rather keep their money in crypto than fiat and have a good understanding of the stock market
+   
 ## ✅ Legal & Licensing Information
 This project has been reviewed for legal compliance.
 To operate such a platform legally, we gonna acquire license through GFSC
