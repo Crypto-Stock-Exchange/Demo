@@ -10,6 +10,8 @@ Flask – Backend API
 
 C++ – For high-performance data processing and parallel computations
 
+Solidity - For Smart Contract
+
 PostgreSQL – Database
 
 We used C++ in parts of the system that required handling large amounts of data efficiently and taking advantage of parallelism.
