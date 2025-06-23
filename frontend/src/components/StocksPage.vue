@@ -31,6 +31,7 @@ const stocks = ref([])
 
 onMounted(async () => {
   try {
+    axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL
     const response = await axios.get('/api/stocks')
     stocks.value = response.data
   } catch (error) {

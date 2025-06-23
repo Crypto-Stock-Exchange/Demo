@@ -137,6 +137,7 @@ export default {
   methods: {
     async fetchPrices() {
       try {
+        axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL
         const response = await axios.get(`/api/stocks/${this.stockId}/pricehistory${this.selectedRange}`);
         const data = await response.data;
         if (Array.isArray(data)) {

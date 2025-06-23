@@ -119,6 +119,7 @@ loadmybets();
 const loadmybets = async () =>{
   try {
     if (walletService.walletAddress.value) {
+      axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL
       const response = await axios.get(`/api/bets/${walletService.walletAddress.value}`);
       userBets.value = response.data;
     }
@@ -157,22 +158,16 @@ const onPopupCancel = () => {
     const signature = await signer.signMessage(message);
 
     try {
-    if (walletService.walletAddress.value) {
-      const response = await fetch("/api/sell", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        tokenId: bet.bet_id,
-        signature: signature,
-        message: message
-      })
-    });
-    
-    const result = await response.json();
+ if (!walletService.walletAddress.value) {
+    throw new Error('Wallet address is not available');
+  }
+axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL
+  const { data: result } = await axios.post("/api/sell", { 
+    tokenId: bet.bet_id,
+    signature: signature,
+    message: message
+  });
 
-    if (!response.ok) {
-      throw new Error(result.error || "Failed to get signature from backend");
-    }
     const signaturetoSend = `0x${result.signature}`;
 
     const tx = await contract.sellNFT(
@@ -189,7 +184,7 @@ const onPopupCancel = () => {
      loadmybets();
 
     }
-  } catch (error) {
+   catch (error) {
     console.error('Hiba a tétek lekérésekor:', error);
     userBets.value = [];
   }
