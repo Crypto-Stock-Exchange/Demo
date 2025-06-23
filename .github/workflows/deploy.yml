@@ -1,0 +1,89 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Needed for git diff to work properly
+
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v34
+      with:
+        separator: ','
+        
+    - name: Install SSH key
+      uses: webfactory/ssh-agent@v0.7.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Prepare deployment
+      run: |
+        # Create list of changed files
+        CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}"
+        echo "Changed files: $CHANGED_FILES"
+        
+        # Create tar archive of only changed files
+        mkdir -p to_deploy
+        for file in $(echo $CHANGED_FILES | tr ',' ' '); do
+          if [ -f "$file" ]; then
+            mkdir -p "to_deploy/$(dirname "$file")"
+            cp "$file" "to_deploy/$file"
+          fi
+        done
+        
+        tar czf deployment.tar.gz -C to_deploy .
+
+    - name: Deploy changes
+      run: |
+        # Transfer and apply changes
+        scp -o StrictHostKeyChecking=no deployment.tar.gz ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }}:${{ secrets.PROJECT_PATH }}/deployment.tar.gz
+        
+        ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }} << 'EOF'
+        cd ${{ secrets.PROJECT_PATH }}
+        
+        # Extract changes
+        tar xzf deployment.tar.gz --overwrite
+        
+        # Determine what needs rebuilding
+        NEED_REBUILD=false
+        if tar tf deployment.tar.gz | grep -q '^backend/'; then
+          echo "Backend changes detected"
+          NEED_REBUILD=true
+        fi
+        
+        if tar tf deployment.tar.gz | grep -q '^frontend/'; then
+          echo "Frontend changes detected"
+          NEED_REBUILD=true
+        fi
+        
+        if tar tf deployment.tar.gz | grep -q '^nginx/'; then
+          echo "NGINX changes detected"
+          NEED_REBUILD=true
+          docker-compose exec nginx nginx -s reload
+        fi
+        
+        # Rebuild if needed
+        if [ "$NEED_REBUILD" = true ]; then
+          echo "Stopping services..."
+          docker-compose down
+          
+          echo "Rebuilding containers..."
+          docker-compose build --no-cache
+          
+          echo "Starting services..."
+          docker-compose up -d
+        else
+          echo "No rebuild needed, only file changes"
+        fi
+        
+        # Cleanup
+        rm deployment.tar.gz
+        EOF
