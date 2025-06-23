@@ -162,7 +162,7 @@ const onPopupCancel = () => {
     throw new Error('Wallet address is not available');
   }
 axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL
-  const { data: result } = await axios.post("/sign", { 
+  const { data: result } = await axios.post("/api/sell", { 
     tokenId: bet.bet_id,
     signature: signature,
     message: message

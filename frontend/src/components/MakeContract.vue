@@ -201,7 +201,6 @@ async function confirmContract() {
     const deadline = Math.floor(new Date(lockoutPeriod.value).getTime() / 1000);
     const senderAddress = walletService.walletAddress.value;
 
-    // 🔹 Kérés a Flask backendhez aláírásért
     axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL
     const response = await axios.post("/api/sign", {
       sender: senderAddress,
@@ -209,16 +208,11 @@ async function confirmContract() {
       deadline: deadline
     })
 
-    const result = await response.json();
-
-    if (!response.ok) {
-      throw new Error(result.error || "Failed to get signature from backend");
-    }
+    const result = response.data;
 
     const { signature, owner, ownerfee } = result;
     const signaturetoSend = `0x${signature}`;
     //const buffer = BigInt(10n ** 15n);
-
     // 🔹 Token jóváhagyás
     const approveTx = await tusddcontract.approve(makeContract.contractaddress, amountInWei.toString());
     await approveTx.wait();
@@ -253,13 +247,9 @@ const tx = await contract.placeBet(
 
 try {
   axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL
-  const res = await axios.post("/api/emit", { 
+  await axios.post("/api/emit", { 
     user_address: walletService.walletAddress.value 
   })
-
-  if (!res.ok) {
-    console.warn("⛔ Backend Is not working:", await res.text());
-  }
 
 } catch (e) {
   console.error("❌ We can't call the bacend server:", e);
