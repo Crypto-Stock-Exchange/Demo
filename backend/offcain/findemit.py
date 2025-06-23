@@ -9,9 +9,9 @@ from config import read_secret
 from decimal import Decimal
 
 
-
+URL = read_secret("URL")
 findemit_bp = Blueprint("findemit", __name__)
-CORS(findemit_bp, origins=["http://localhost:8080"])
+CORS(findemit_bp, origins=[URL])
 
 SEPOLIA_RPC = read_secret("SEPOLIA_RPC_URL")
 w3 = Web3(Web3.HTTPProvider(SEPOLIA_RPC))

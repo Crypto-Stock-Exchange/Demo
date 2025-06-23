@@ -7,8 +7,9 @@ from eth_abi.packed import encode_packed
 from config import read_secret
 
 # Flask blueprint
+URL = read_secret("URL")
 makesignature_bp = Blueprint("makesignature", __name__)
-CORS(makesignature_bp, origins=["http://localhost:8080"])
+CORS(makesignature_bp, origins=[URL])
 
 PRIVATE_KEY = read_secret("PRIVATE_KEY")
 OWNER = read_secret("OWNER")

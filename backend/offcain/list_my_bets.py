@@ -3,8 +3,10 @@ from flask_cors import CORS
 import psycopg2
 from config import read_secret
 
+
+URL = read_secret("URL")
 list_my_bets_bp = Blueprint("list_my_bets", __name__)
-CORS(list_my_bets_bp, origins=["http://localhost:8080"])
+CORS(list_my_bets_bp, origins=[URL])
 
 def get_db_connection():
     conn = psycopg2.connect(
