@@ -2,9 +2,11 @@ import psycopg2
 from flask import Flask, jsonify, Blueprint
 from flask_cors import CORS
 from config import read_secret
+
+URL = read_secret("URL")
     
 liststocks_bp = Blueprint("liststocks", __name__)
-CORS(liststocks_bp, origins=["http://localhost:8080"])
+CORS(liststocks_bp, origins=[URL])
 
 DB_NAME = read_secret("POSTGRES_DB")
 DB_USER = read_secret("POSTGRES_USER")

@@ -1,5 +1,5 @@
 # Crypto Stock Exchange
-Crypto Stock Exchange is a demo project that bridges the traditional stock market with the decentralized crypto ecosystem. We integrated key DeFi protocols AAVE and Uniswap V3 to bring prediction based stock exposure into the crypto space
+Crypto Stock Exchange is a demo project that bridges the traditional stock market with the decentralized crypto ecosystem. We integrated key DeFi protocols AAVE and Uniswap V3 to bring prediction based stock exposure into the crypto space.
 
 ## 🔗 Live demo (no real money required): <a>https://crypto-stock-exchange.com</a>
 

@@ -11,8 +11,9 @@ from decimal import Decimal
 from web3 import Web3
 
 # Flask blueprint
+URL = read_secret("URL")
 sellbets_bp = Blueprint("sign_sell", __name__)
-CORS(sellbets_bp, origins=["http://localhost:8080"])
+CORS(sellbets_bp, origins=[URL])
 
 PRIVATE_KEY = read_secret("PRIVATE_KEY")
 OWNER = read_secret("OWNER")
