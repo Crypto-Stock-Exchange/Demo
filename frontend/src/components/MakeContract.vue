@@ -107,6 +107,7 @@ import makeContract from '@/services/makeContract';
 import walletService from '@/services/walletService';
 import Datepicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
+import axios from 'axios'
 // import { keccak256, toUtf8Bytes } from "ethers";
 
 const intervalDown = ref(1);
@@ -201,15 +202,12 @@ async function confirmContract() {
     const senderAddress = walletService.walletAddress.value;
 
     // 🔹 Kérés a Flask backendhez aláírásért
-    const response = await fetch("/api/sign", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        sender: senderAddress,
-        amountInWei: amountInWei.toString(),
-        deadline: deadline
-      })
-    });
+    axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL
+    const response = await axios.post("/api/sign", {
+      sender: senderAddress,
+      amountInWei: amountInWei.toString(),
+      deadline: deadline
+    })
 
     const result = await response.json();
 
@@ -254,11 +252,10 @@ const tx = await contract.placeBet(
     await tx.wait(); 
 
 try {
-  const res = await fetch("/api/emit", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ user_address: walletService.walletAddress.value })
-  });
+  axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL
+  const res = await axios.post("/api/emit", { 
+    user_address: walletService.walletAddress.value 
+  })
 
   if (!res.ok) {
     console.warn("⛔ Backend Is not working:", await res.text());

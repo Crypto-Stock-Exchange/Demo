@@ -5,15 +5,18 @@ from offcain.makesignature import makesignature_bp
 from offcain.findemit import findemit_bp
 from offcain.list_my_bets import list_my_bets_bp
 from offcain.sign_sell import sellbets_bp
+from config import read_secret
 #from filldata import populate_data
 
 
 app = Flask(__name__)
-app.register_blueprint(liststocks_bp)
+URL = read_secret("URL")
+CORS(app, origins=[URL, URL])
+app.register_blueprint(liststocks_bp, url_prefix="/api")
 app.register_blueprint(makesignature_bp, url_prefix="/api")
-app.register_blueprint(findemit_bp) 
-app.register_blueprint(list_my_bets_bp)
-app.register_blueprint(sellbets_bp)
+app.register_blueprint(findemit_bp, url_prefix="/api") 
+app.register_blueprint(list_my_bets_bp, url_prefix="/api")
+app.register_blueprint(sellbets_bp, url_prefix="/api")
 @app.route("/")
 def hello():
     # tickers = ["AAPL",  # Apple
