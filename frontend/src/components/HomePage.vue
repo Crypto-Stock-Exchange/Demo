@@ -1,7 +1,7 @@
 <template>
   <div class="home-container pulsing-background">
     <h1 class="home-title">Welcome to Crypto Stock Exchange</h1>
-    <p class="home-subtitle">Predict stock price ranges, stake your funds, and earn rewards based on accuracy.</p>
+    <p class="home-subtitle">Predict stock price ranges, stake your funds, and earn rewards based on accuracy</p>
 
 <router-link to="/about-us" class="home-button">
   Explore
