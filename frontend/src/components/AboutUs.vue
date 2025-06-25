@@ -57,7 +57,7 @@
 
     <p>
       📘 Want the full breakdown?
-      <a href="https://github.com/Gere321123/Crypto_Stock_Exchange" target="_blank">Read the complete documentation here</a>.
+      <a href="https://github.com/Crypto-Stock-Exchange/Demo" target="_blank">Read the complete documentation here</a>.
     </p>
   </div>
 </section>
@@ -85,7 +85,7 @@
 
   <p class="feedback-invite">
   💡 Want to help us improve the platform or share your ideas? <br />
-  Fill out our short questionnaire <a href="https://github.com/Gere321123/Crypto_Stock_Exchange" target="_blank">here</a>.
+  Fill out our short questionnaire <a href="https://github.com/Crypto-Stock-Exchange/Demo/issues" target="_blank">here</a>.
 </p>
 
 </section>
