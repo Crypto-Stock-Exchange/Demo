@@ -23,7 +23,7 @@ function getShowPopup() {
 }
 
 async function hasnft() {
-  if (walletService.walletAddress.value && walletService.netwokrType === 'local') {
+  if (walletService.walletAddress.value && walletService.netwokrType !== 'local') {
     const provider = new ethers.BrowserProvider(walletService.walletRowProvider.value);
     const signer = await provider.getSigner();
 
