@@ -23,7 +23,7 @@ function getShowPopup() {
 }
 
 async function hasnft() {
-  if (walletService.walletAddress.value) {
+  if (walletService.walletAddress.value && walletService.netwokrType === 'local') {
     const provider = new ethers.BrowserProvider(walletService.walletRowProvider.value);
     const signer = await provider.getSigner();
 
@@ -34,7 +34,7 @@ async function hasnft() {
   } else { return false; }
 }
 
-watch(walletService.walletAddress, async (newAddress) => {
+watch(walletService.walletAddress && walletService.netwokrType, async (newAddress) => {
   if (newAddress) {
     myBetsVisible.value = await hasnft();
   } else {
