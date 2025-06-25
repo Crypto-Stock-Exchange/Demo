@@ -8,6 +8,8 @@
           class="stock-card" 
           v-for="stock in stocks" 
           :key="stock.name"
+          @click="$router.push({ name: 'StockDetails', params: { id: stock.id } })"
+          style="cursor: pointer;"
         >
           <router-link 
             :to="{ name: 'StockDetails', params: { id: stock.id } }" 

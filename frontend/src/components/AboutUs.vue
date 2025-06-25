@@ -16,7 +16,12 @@
   </button>
 </div>
       <div class="image-content">
-        <img src="@/assets/logo.png" alt="Logo" />
+            <img
+            :class="{ loaded: isLoaded }"
+            src="@/assets/logo.png"
+            alt="Logo"
+            @load="handleLoad"
+          />
       </div>
     </section>
 
@@ -91,7 +96,20 @@
 </section>
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      isLoaded: false,
+    };
+  },
+  methods: {
+    handleLoad() {
+      this.isLoaded = true;
+    },
+  },
+};
+</script>
 
 <style scoped>
 .main-container {
@@ -165,6 +183,13 @@
 .image-content img {
   width: 70%;
   height: auto;
+  filter: blur(10px);
+  opacity: 0;
+  transition: filter 0.8s ease, opacity 0.8s ease; 
+}
+.image-content img.loaded {
+  filter: blur(0px);
+  opacity: 1;
 }
 .how-it-works {
   position: relative;
