@@ -47,3 +47,7 @@ Early withdrawal is possible but comes with a significant fee, which is redistri
 ## 🐞 Feedback & Issues
 Have feedback, questions, or encountered a bug?
 ## 👉 Submit an issue [here](https://github.com/Crypto-Stock-Exchange/Demo/issues)
+
+## License  
+This project is licensed under the **GNU AGPL-3.0** - see the [LICENSE](LICENSE) file for details.  
+© 2025 [Gergely Gere](https://crypto-stock-exchange.com/), founder of Crypto Stock Exchange.  
