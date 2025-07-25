@@ -50,4 +50,4 @@ Have feedback, questions, or encountered a bug?
 
 ## License  
 This project is licensed under the **GNU AGPL-3.0** - see the [LICENSE](LICENSE) file for details.  
-© 2025 [Gergely Gere](https://crypto-stock-exchange.com/), founder of Crypto Stock Exchange.  
+© 2025 [Gergely Gere](https://www.linkedin.com/in/gergely-gere-0769b9306/), founder of Crypto Stock Exchange.  
